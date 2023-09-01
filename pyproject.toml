@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "langflow-extras"
+version = "0.1.0"
+description = "Support Classes and Functions for PubNub interaction and other utilities"
+authors = ["Gabriel Luiz Freitas Almeida <gabriel@logspace.ai>"]
+readme = "README.md"
+packages = [{ include = "langflow_extras", from = "src/" }]
+[tool.poetry.scripts]
+langflow = "langflow_extras.main:main"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+langflow = "*"
+python-dotenv = "*"
+orjson = "3.9.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+ipykernel = "^6.24.0"
+rich = { extras = ["jupyter"], version = "^13.4.2" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
